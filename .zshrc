@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/pacocp/.oh-my-zsh"
+export ZSH="/Users/pacocp/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -80,11 +80,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='vim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -97,3 +97,38 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias vim="nvim ."
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/pacocp/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/pacocp/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/pacocp/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/pacocp/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+alias twitter='rainbowstream'
+alias notedie='vim todobeforedie/index.html'
+
+# diary commands
+export NOTES=$HOME/Documents/Notes
+alias notes='cd $NOTES'
+export EDITOR=vim
+
+alias diary='mkdir -p $NOTES/diary/$(date +"%Y/%m") && $EDITOR $NOTES/diary/$(date +"%Y/%m/%Y-%m-%d.md")'
+alias yesterday='mkdir -p $NOTES/diary/$(date -d yesterday +"%Y/%m") && $EDITOR $NOTES/diary/$(date -d yesterday +"%Y/%m/%Y-%m-%d.md")'
+#alias vim='nvim'
+#
+eval "$(starship init zsh)"
+
+. "$HOME/.cargo/env"

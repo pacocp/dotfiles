@@ -1,0 +1,68 @@
+{
+  "assistant": {
+    "default_model": {
+      "provider": "ollama",
+      "model": "gemma2:latest"
+    },
+    "version": "2"
+  },
+  "language_models": {
+    "anthropic": {
+      "version": "1"
+    }
+  },
+  "features": {
+    "copilot": false
+  },
+  "show_copilot_suggestions": false,
+  "theme": "Catppuccin Mocha",
+  "buffer_font_size": 13,
+  "buffer_font_family": "CommitMono Nerd Font",
+  "vim_mode": false,
+  "copilot": {
+    "enabled": true,
+    "key": "Tab"
+  },
+  // disable cursor blink
+  "cursor_blink": false,
+  // use relative line numbers
+  "relative_line_numbers": true,
+  // hide the scroll bar
+  "scrollbar": {
+    "show": "never"
+  },
+  // allow cursor to reach edges of screen
+  "vertical_scroll_margin": 0,
+  "tab_bar": {
+    "show": false
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false
+  },
+  "preferred_line_length": 90,
+  "soft_wrap": "preferred_line_length",
+  "use_autoclose": false,
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+      "delay_ms": 500
+    }
+  },
+  "terminal": {
+    "alternate_scroll": "off",
+    "blinking": "terminal_controlled",
+    "copy_on_select": true,
+    "font_family": "CommitMono Nerd Font",
+    "line_height": "standard",
+    "toolbar": {
+      "title": true
+    },
+    "working_directory": "current_project_directory"
+  },
+  "formatter": {
+    "language_server": {
+      "name": "biome"
+    }
+  }
+}
